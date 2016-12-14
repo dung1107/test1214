@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+        @import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+        *{
+            box-sizing: border-box;
+            font-family: "Roboto","notosanstc";
+        }
+        body,h1,h2,h3,h4,h5,h6,p{
+            margin: 0;
+            padding: 0;
+        }
+        p{
+            font-size: 14px;
+            color: #999;
+        }
+        img{
+            width: 100%;
+            vertical-align:top; 
+            border: 0;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .full-width{
+            width: 100%;
+        }
+        .fixed-width{
+            width: 1200px;
+            margin: auto;
+        }
+        .col-3{
+            float: left;
+            width: 380px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .col-4{
+            float: left;
+            width: 280px;
+            margin-left: 10px;   
+            margin-right: 10px;
+        }
+        nav{
+            position: fixed;
+        }
+        nav .logo{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: #afafaf;
+        }
+        nav .menu{
+            float: right;
+        }
+        nav .menu ul{
+            margin: 0;
+            padding: 0;
+        }
+        nav .menu li{
+            float: left;
+            list-style-type: none;
+        }
+        nav .menu a{
+            display: block;
+            padding-left: 15px;
+            padding-right: 15px;
+            height: 100px;
+            line-height: 100px;
+            color: #ffffff;
+            font-size: 12px;
+            text-decoration: none;
+        }
+        header{
+            background-image:url(http://lorempicsum.com/up/800/300/4);
+            background-size: cover;
+            height: 600px;
+          /* padding-top: 250px;*//*第一個可以讓中間的文字置中的方法*/
+           /* padding-bottom: 250px;*/
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0;
+        }
+        header .content{
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        header::before{
+            content:"";
+            display: inline-block;  /*第二個可以讓中間的文字置中的方法*/
+            vertical-align: middle;
+            height: 100%;
+        } 
+        #about {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        #about .col-3{
+            text-align: center;
+            padding: 20px;
+        }
+        #about h3{
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        #about p{
+            font-size: 14px;
+        }
+        #about .col-3:nth-of-type(1) .icon{
+            color: burlywood;
+        }
+         #about .col-3:nth-of-type(2) .icon{
+            color: #e2168c;
+        }
+         #about .col-3:nth-of-type(3) .icon{
+            color: #0c6ff5;
+        }
+        #ad{
+            background-image: url(image/001.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;
+            color: #fff;
+        }
+        #ad p{
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        #profile{
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        #profile div:nth-of-type(1){
+            text-align: center;
+        }
+        #profile .detail{
+            display:inline-block;
+            vertical-align:middle;
+            font-size: 0;
+            width: 100%;
+    
+        }
+        #profile .detail::before{
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+            
+        }
+        #profile .thumb{
+            display:inline-block;
+            vertical-align:middle;
+            font-size:16px;
+            width: 80px;
+        }
+        #profile .position{
+            display:inline-block;
+            vertical-align:middle;
+            font-size:16px;
+            width: 300px;
+            text-align: left;
+        }
+        #profile div:nth-of-type(2) .col-3>p {
+            padding: 20px 20px 40px 15px;
+            text-align: left;
+        }
+        #blog .gallery+p{
+            padding-top: 30px;
+            color: darkgrey;
+        }
+        #blog{
+            background-color: azure;
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+          
+        #blog .gallery{
+            position: relative;
+        }
+        #blog .gallery .date{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0,0,0,.7);
+            color: #fff;
+            top:0;
+            left: 40px;
+            text-align: center;
+        }
+        .title{
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 50px;
+        }
+        .title p{
+            line-height: 25px;
+        }
+        footer .logo{
+            width: 100px;
+            height: 70px;
+            background-color: #ccc;
+            float: left;
+        }
+        footer .copyright{
+            line-height: 70px;
+            float: left;
+            font-size: 14px;
+            margin-left: 30px;
+        }
+        footer .menu{
+            float: right;
+        }
+        footer .menu a{
+            line-height: 70px;
+            text-decoration: none;
+            color: #333;
+            margin-left: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+   <nav class="full-width clearfix">
+      <div class="fixed-width">
+       <div class="logo"></div>
+           <div class="menu">
+               <ul>
+                   <li><a href="#">About Us</a></li>
+                   <li><a href="#">Products</a></li>
+                   <li><a href="#">Journal</a></li>
+                   <li><a href="#">Contact Us</a></li>
+               </ul>
+           </div>
+           </div>
+       </nav>
+    <header class="full-width">
+        <div class="content">
+            <h1>eijfepg</h1>
+            <p>
+                efojwo lpokreg  ieufw-lp
+            </p>
+            <a href="#">more</a>
+        </div>
+    </header>
+    <div id="about" class="full-width clearfix">
+        <div class="fixed-width">
+            <div class="col-3">
+                <div class="icon"><span class="fa fa-cutlery fa-4x"></span></div>
+            <h3>iejf</h3>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, architecto dignissimos eligendi! 
+            </p>
+            </div>
+            <div class="col-3">
+              <div class="icon"><span class="fa fa-moon-o fa-4x"></span></div>
+            <h3>iejf</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, architecto dignissimos eligendi! </p>
+            </div><div class="col-3">
+                <div class="icon"><span class="fa fa-motorcycle fa-4x"></span></div>
+            <h3>iejf</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, architecto dignissimos eligendi! </p>
+            </div>
+            
+        </div>
+    </div>
+    <div id="ad" class="full-width">
+        <div class="content">
+            <h2>djfg</h2>
+            <p>jowjogjwp owijiowj woygyx</p>
+            <div><span class="fa fa-youtube-play fa-4x"></span></div>
+        </div>
+    </div>
+    <div id="profile" class="full-width clearfix">
+        <div class="fixed-width title">
+            <h2>itjhorjh</h2>
+            <p>oegkekpgleplpgkel</p>
+        </div>
+        <div class="fixed-width">
+           <div class="col-3">
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis possimus facere, quam. Eius culpa vero omnis consequatur, facilis animi, eum laborum odit voluptate earum harum magnam, saepe? Explicabo at, labore.
+                </p>
+                <div class="detail">
+                    <div class="thumb">
+                    <span class="fa fa-user-circle-o fa-2x"></span></div>
+                    <div class="position">
+                        <h3>rujtkt</h3>
+                        <p>eyeuklwqpopl</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis possimus facere, quam. Eius culpa vero omnis consequatur, facilis animi, eum laborum odit voluptate earum harum magnam, saepe? Explicabo at, labore.
+                </p>
+                <div class="detail">
+                    <div class="thumb"><span class="fa fa-user-circle-o fa-2x"></span></div>
+                    <div class="position">
+                        <h3>rujtkt</h3>
+                        <p>eyeuklwqpopl</p>
+                    </div>
+                </div>
+            </div>
+               <div class="col-3">
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis possimus facere, quam. Eius culpa vero omnis consequatur, facilis animi, eum laborum odit voluptate earum harum magnam, saepe? Explicabo at, labore.
+                </p>
+                <div class="detail">
+                    <div class="thumb"><span class="fa fa-user-circle-o fa-2x"></span></div>
+                    <div class="position">
+                        <h3>qwrkj</h3>
+                        <p>rye0jkopepk</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="blog" class="full-width clearfix">
+        <div class="fixed-width title">
+            <h2>jwijtwt</h2>
+            <p>wqrokos wjruiwjr qpll3rl</p>
+        </div>
+        <div class="fixed-width">
+            <div class="col-4">
+                <div class="gallery">
+                    <div class="date">01<br>JAN</div>
+                        <img src="image/002.jpg" alt="">
+                       </div>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sed, at aperiam ut </p>
+            </div>
+            <div class="col-4">
+                <div class="gallery">
+                    <div class="date">06<br>OCT</div>
+                        <img src="image/003.jpg" alt="">
+                       </div>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sed, at aperiam ut </p>
+            </div><div class="col-4">
+                <div class="gallery">
+                    <div class="date">20<br>SUP</div>
+                        <img src="image/004.jpg" alt="">
+                       </div>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sed, at aperiam ut </p>
+            </div><div class="col-4">
+                <div class="gallery">
+                    <div class="date">15<br>JAN</div>
+                        <img src="image/005.jpg" alt="">
+                       </div>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sed, at aperiam ut </p>
+            </div>
+        </div>
+        </div>
+        <footer  class="full-width">
+            <div class="fixed-width">
+               <div class="logo"></div>
+               <div class="copyright">
+                <p>&copy;Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="menu">
+                <a href="#">About</a>
+                <a href="#">FAQ</a>
+                <a href="#">Services</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+</footer>
+    </body>
+</html>
